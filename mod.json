@@ -1,0 +1,101 @@
+{
+	"geode": "5.0.0",
+	"gd": {
+		"win": "2.2081"
+	},
+	"id": "srank.mod-menu",
+	"name": "Srank Mod Menu",
+	"version": "v1.0.0",
+	"developer": "srank",
+	"description": "Srank Mod Menu: noclip, accuracy, CPS, click indicator, speedhack, auto coins, FPS and unlock all icons.",
+	"tags": [
+		"gameplay",
+		"utility"
+	],
+	"settings": {
+		"noclip": {
+			"type": "bool",
+			"name": "Noclip",
+			"description": "Don't die when touching hazards or walls.",
+			"default": false
+		},
+		"noclip-accuracy": {
+			"type": "bool",
+			"name": "Noclip Accuracy",
+			"description": "Show the percentage of frames you were NOT touching a hazard.",
+			"default": true
+		},
+		"noclip-min-accuracy": {
+			"type": "float",
+			"name": "Noclip Min Accuracy %",
+			"description": "Die if accuracy drops below this value (0 = never die).",
+			"default": 0.0,
+			"min": 0.0,
+			"max": 100.0
+		},
+		"cps-counter": {
+			"type": "bool",
+			"name": "CPS Counter",
+			"description": "Show clicks per second in the top-left.",
+			"default": true
+		},
+		"click-indicator": {
+			"type": "bool",
+			"name": "Click Indicator",
+			"description": "Show a dot at the bottom of the screen that lights up while you hold click.",
+			"default": true
+		},
+		"speedhack": {
+			"type": "bool",
+			"name": "Speedhack",
+			"description": "Enable game speed changes.",
+			"default": false
+		},
+		"speed": {
+			"type": "float",
+			"name": "Speed",
+			"description": "Game speed multiplier (1.0 = normal).",
+			"default": 1.0,
+			"min": 0.05,
+			"max": 10.0
+		},
+		"speed-pitch": {
+			"type": "bool",
+			"name": "Speed Affects Music",
+			"description": "Change the music pitch together with the speed.",
+			"default": true
+		},
+		"auto-coins": {
+			"type": "bool",
+			"name": "Auto Pickup Coins",
+			"description": "Automatically collect every coin in the level.",
+			"default": false
+		},
+		"fps-enabled": {
+			"type": "bool",
+			"name": "FPS Change",
+			"description": "Use a custom FPS (turn off VSync in GD's video settings for values above your monitor's refresh rate).",
+			"default": false
+		},
+		"fps": {
+			"type": "int",
+			"name": "FPS",
+			"description": "Target frames per second.",
+			"default": 240,
+			"min": 30,
+			"max": 1000
+		},
+		"unlock-all": {
+			"type": "bool",
+			"name": "Unlock All Icons",
+			"description": "Unlock every icon and color in the garage (local only).",
+			"default": false
+		},
+		"safe-mode": {
+			"type": "bool",
+			"name": "Safe Mode",
+			"description": "Marks the run as a test run whenever noclip, speedhack or auto coins are on, so cheated progress isn't saved or submitted.",
+			"default": true
+		}
+	}
+}
