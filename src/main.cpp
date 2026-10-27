@@ -201,6 +201,7 @@ class $modify(HPPlayLayer, PlayLayer) {
         std::string lastAcc;
 
         std::vector<GameObject*> coins;
+        std::vector<GameObject*> collected;
     };
 
     void setupHasCompleted() {
@@ -251,6 +252,7 @@ class $modify(HPPlayLayer, PlayLayer) {
         f->totalFrames = 0;
         f->deathFrames = 0;
         f->diedThisFrame = false;
+        f->collected.clear();
     }
 
     // Noclip: swallow deaths (but keep the anti-cheat spike working)
@@ -344,7 +346,8 @@ class $modify(HPPlayLayer, PlayLayer) {
         // name the pickup function differently, this is the one line to change.
         if (coins && alive) {
             for (auto obj : f->coins) {
-                if (obj->m_hasBeenActivated) continue;
+                if (std::find(f->collected.begin(), f->collected.end(), obj) != f->collected.end()) continue;
+                f->collected.push_back(obj);
                 m_player1->collidedWithObject(dt, obj, obj->getObjectRect(), false);
             }
         }
